@@ -58,12 +58,12 @@ class LinkedList:
         new_node = Node(value)
 
         # sanity check
-        if self.tail is None and self.head is None:
-            self.tail = new_node
+        if self.head is None and self.tail is None:
             self.head = new_node
+            self.tail = new_node
         else:
             # setting new node to tail(moving)
-            new_node.next_node = self.tail
+            self.tail.next_node = new_node
             self.tail = new_node
 
     # remove head and return the value
@@ -81,7 +81,7 @@ class LinkedList:
         self.head = self.head.next_node
         return head_value
 
-    def contain_values(self, value):
+    def contains(self, value):
         if self.head is None:
             return False
 
@@ -136,7 +136,7 @@ class Stack:
 
 
 new_stack = Stack()
-# print(len(new_stack))
+print(len(new_stack))
 new_stack.push(1)
 new_stack.push(2)
 new_stack.push(3)
